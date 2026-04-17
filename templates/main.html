@@ -1,0 +1,48 @@
+{% extends "base_template.html" %}
+{% load static %}
+
+{% block title %}Main{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'app/css/main.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="hero text-center py-5">
+    <h1>Welcome to my portfolio!</h1>
+    <p class="lead">
+        Hi, I’m Yura — Software Developer who loves building websites, scrapers, bots & automation tools.
+    </p>
+    <a href="/projects/" class="btn-custom mt-3">See my projects</a>
+</div>
+
+<h2 class="mt-5 text-center">What I Do</h2>
+
+<div class="row text-center">
+    <div class="col-md-4">
+       <a href="/projects/" class="glitch-icon matrix-link" data-matrix-href="/projects/" aria-label="Go to My projects">
+            <i class="bi bi-code-slash display-4"></i>
+       </a>
+        <h5 class="mt-2">Web Development</h5>
+    </div>
+
+    <div class="col-md-4">
+        <span class="glitch-icon">
+            <i class="bi bi-robot display-4"></i>
+        </span>
+        <h5 class="mt-2">Automation & Bots</h5>
+    </div>
+
+    <div class="col-md-4">
+        <span class="glitch-icon">
+            <i class="bi bi-database display-4"></i>
+        </span>
+        <h5 class="mt-2">Data & Scraping</h5>
+    </div>
+</div>
+
+<div class="cta text-center py-5">
+    <h2>Let’s build something great together!</h2>
+    <a href="/contact/" class="btn-custom mt-3">Contact Me</a>
+</div>
+{% endblock %}
