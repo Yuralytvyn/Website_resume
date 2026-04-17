@@ -6,4 +6,4 @@ venv/
 app/
 *xml
 *iml
-.idea
+.idea/
