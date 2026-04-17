@@ -1,0 +1,32 @@
+{% extends "base_template.html" %}
+{% load static %}
+{% block title %}My projects{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'app/css/my_projects.css' %}">
+{% endblock %}
+
+{% block content %}
+  <h1>My projects</h1>
+
+  {% for section in sections %}
+    <h2>{{ section.title }}</h2>
+
+    <div class="projects">
+      {% for project in section.projects.all %}
+        <div class="project-card">
+          <h3>{{ project.title }}</h3>
+
+          {% if project.image %}
+            <img src="{{ project.image.url }}" alt="{{ project.title }}">
+          {% endif %}
+
+          <p>{{ project.description }}</p>
+        </div>
+      {% empty %}
+        <p>No projects yet.</p>
+      {% endfor %}
+    </div>
+  {% endfor %}
+
+{% endblock %}
